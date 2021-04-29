@@ -1,14 +1,43 @@
-import React , {useRef} from 'react'
 
+import React , {useEffect}  from 'react'
+
+// class  Hello extends Component{
+//     constructor(props) {
+//       super(props)
+    
+//       this.state = {
+//          isLoggedIn:false
+//       }
+//     }
+    
+//     render(){
+//         if(this.state.isLoggedIn){
+//             <div>
+//                 hello Krish
+//             </div>  
+//         }
+//     return (
+//         <div>
+//             <div>
+//                 welcome react
+//             </div>
+//             <div>
+//                 hello Krish
+//             </div>  
+//         </div>
+//         )
+//     }
+// }
 const Hello = () => {
-    const renders  = useRef(0);
-    console.log(`hello ${renders.current++}`);
+useEffect (() =>{
+    console.log('rendered');
     return (
-        <div>
-            hello world
-        </div>
+        console.log('unmount')
     )
+
+})
+return(
+    <div>hey</div>
+)
 }
-
-
 export default Hello;

@@ -1,35 +1,37 @@
-import React , {useState  , useRef}   from 'react'
+import React , {useEffect, useState}  from 'react'
+
+
 import { useForm } from './useForm';
-// import {useFetch} from './useFetch'
-import Hello from './Hello'
-
+import useFetch from './useFetch'
 const App = () =>{
-    const [values, handleChange] = useForm({ email: "", password: "" });
-    // const {data, loading} = useFetch('http://numbersapi.com/43/trivia')
-    const inputRef = useRef();
-    const [showHello , setShowHello] = useState(true);
-    // for localStorage we need to use localStorage.setItem()....
-        // const [count, setCount] = useState(() => JSON.parse(localStorage.getItem('count')));
-        // useEffect(() => {
-        //     localStorage.setItem('count',JSON.stringify(count));
-        // } , [count])
-    return (
-        <>  
+    const[values , handleValues] = useForm({email : '' , password : ''})
+    const [count , setCounter] = useState(0);
+    const {data} = useFetch(`http://numbersapi.com/${count}/trivia`)
+    
+    // useEffect (() =>{
 
-            {/* <h1>{loading ? 'loading...' : data}</h1>
-            <h1>{count}</h1>
-            <button onClick = {() => {
-                setCount(count+1);
-            }}>Increase</button> */}
-            <button onClick  = {() => {
-                setShowHello(!showHello)
-            }}>Toggle</button>
-            {showHello && <Hello />}
-            <button onClick = {() => {
-                console.log(inputRef.current.focus())
-            }}>Focus</button>
-            <input type = "text" ref= {inputRef} name="email" value = {values.email} onChange = {handleChange}/>
-            <input type = "password" name="password" value = {values.password} onChange = {handleChange}/>
+    //     const onMouseMove = e => {
+    //         console.log(e);
+    //     }
+    //     window.addEventListener('mousemove' , onMouseMove)
+    //     return () => {
+    //         window.removeEventListener("mousemove" , onMouseMove)
+    //     }
+    
+    // } , []);
+    
+    return (
+        <>      
+            {/* <button onClick = {() => setToggleValue(!toggleValue)}>Toggle</button>
+            {toggleValue && <Hello/>} */}
+            
+            <h1>{!data ? "Loading..." : data}</h1>
+            <button onClick  = {() =>setCounter(count+1)}>Increment</button>
+            
+            <input type="text" name = "email" value = {values.email} onChange = { handleValues}/>
+            <input type="number" name = "password" value = {values.password} onChange = {handleValues}/>
+            <h1>{values.email} {values.password}</h1>
+            
         </>
     )    
 }
