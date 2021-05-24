@@ -1,9 +1,10 @@
 import React  from 'react'
 import './App.css';
+// import Candy from './hooksComponents/Candy';
 // import ClassCounter from './hooksComponents/ClassCounter';
 // import DataFetching from './hooksComponents/DataFetching';
 // import Hooks from './hooksComponents/Hooks';
-import ReduceFetch from './hooksComponents/ReduceFetch';
+// import ReduceFetch from './hooksComponents/ReduceFetch';
 // import EffectDepth from './hooksComponents/EffectDepth';
 // import ClassCounter from './hooksComponents/ClassCounter';
 // import Hooks from './hooksComponents/Hooks';
@@ -92,7 +93,8 @@ const App = () =>{
           </UserContext.Provider> */}
            {/* useContext hook very usefull... */}
            {/* <Hooks/> */}
-           <ReduceFetch/>
+           {/* <ReduceFetch/> */}
+           {/* <Candy/> */}
     </div>
   );
 }
