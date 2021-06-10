@@ -68,11 +68,11 @@ const FormikExample = () => {
 					<MyRadio type="radio" name="dahi" value="berry" label="berry" />
 					<MyRadio type="radio" name="dahi" value="khata" label="khata" />
 					<MyRadio type="radio" name="dahi" value="simple" label="simple" />
-					<FieldArray name="pets">{arrayhelpers => {
+					<FieldArray name="pets">{petArray => {
 						return (
 							<div>
-								<Button onClick={() => (
-									arrayhelpers.push({
+								<Button variant="contained" onClick={() => (
+									petArray.push({
 										type: 'frog',
 										name: '',
 										id: "" + Math.random()

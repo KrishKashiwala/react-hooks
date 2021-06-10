@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import './App.css';
 import Api from './components/Api'
+import OwnForm from './components/OwnForm';
 // import Reducer from './components/Reducer';
 // import Context from './components/Context';
 const Value = React.createContext(null)
@@ -34,6 +35,7 @@ function App() {
         {/* <Checker /> */}
       </Value.Provider>
       {/* <Reducer /> */}
+      <OwnForm />
     </div>
 
   );
